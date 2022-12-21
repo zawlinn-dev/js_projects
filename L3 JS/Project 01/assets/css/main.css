@@ -1,0 +1,226 @@
+/* Font Installation */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&family=Roboto+Condensed:wght@300;400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 10px;
+}
+
+main {
+  height: 100vh;
+  background-color: #dedede;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+body {
+  font-family: "Roboto";
+}
+
+.container {
+  width: 50%;
+  /* height: 90%; */
+  /* overflow-y: auto; */
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Grid Config */
+
+.slider_container {
+  /* border: 1px solid; */
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, minmax(2rem, 13rem));
+  gap: 5px;
+
+  grid-template-areas:
+    "img01 img01 img02 img02"
+    "img01 img01 img03 img03"
+    "img01 img01 img04 img04"
+    "img05 img05 img06 img06";
+}
+
+.img_01 {
+  grid-area: img01;
+}
+.img_02 {
+  grid-area: img02;
+}
+.img_03 {
+  grid-area: img03;
+}
+.img_04 {
+  grid-area: img04;
+}
+.img_05 {
+  grid-area: img05;
+}
+.img_06 {
+  grid-area: img06;
+}
+/* Modal Start */
+.modal_container {
+  height: 100vh;
+  width: 100%;
+
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  top: 1rem;
+  z-index: 2;
+
+  /* display: flex; */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  /* align-items: flex-start; */
+}
+
+.modal_background {
+  width: 100%;
+  height: 100vh;
+
+  /* background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 1)); */
+  /* opacity: 0.7; */
+  cursor: pointer;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  transition: all 0.5s;
+}
+
+.modal_box {
+  width: 50%;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  z-index: 4;
+}
+
+.btn_close {
+  position: absolute;
+  right: 2rem;
+  top: 1.5rem;
+  z-index: 5;
+}
+
+.modal_view {
+  flex: 0 0 19.5rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigator {
+  position: absolute;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.6);
+  opacity: 0.3;
+  color: #333;
+}
+
+.navigator:hover {
+  opacity: 1;
+}
+
+.prev_icon {
+  left: 0;
+}
+
+.next_icon {
+  right: 0;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 5px;
+
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.captions {
+  font-variant: small-caps;
+}
+
+.modal_items {
+  display: flex;
+}
+
+.modal_item_img {
+  flex: 0 1 calc(100% / 6);
+  filter: grayscale(100%);
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+
+.modal_item_img:hover,
+.activeImg {
+  opacity: 1;
+  filter: grayscale(0);
+}
+
+.active {
+  display: flex;
+}
+
+@media screen and (max-width: 1100px) {
+  .modal_box {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .container,
+  .modal_box {
+    width: 80%;
+  }
+
+  .modal_container {
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .modal_container {
+    align-items: flex-start;
+    padding-top: 10vh;
+  }
+  .container,
+  .modal_box {
+    width: 95%;
+  }
+}
