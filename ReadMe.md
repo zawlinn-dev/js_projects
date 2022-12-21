@@ -16,7 +16,7 @@ How to run the project -
 
 ```sh
 
-git clone https://github.com/zawlinn-dev/project_03.git
+git clone https://github.com/zawlinn-dev/js_projects.git
 
 ```
 
